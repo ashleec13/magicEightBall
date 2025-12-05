@@ -6,7 +6,7 @@ function shakeMagic8Ball() {
     if (question === null) {
         document.getElementById('response-text').innerText = 'Please Ask A Question';
         document.getElementById('response-text').classList = 'lead text-danger fw-bold';
-        document.getElementById('response-img').src = 'loripsum.jpg';
+        document.getElementById('response-img').src = 'images/loripsum.jpg';
         document.getElementById('magic-button').classList.add('button-below-image');
         return;
     }
@@ -25,47 +25,47 @@ function shakeMagic8Ball() {
     switch (randomNumber) {
         case 0:
             answer = "Yes, definitely.";
-            image = "images/8ball_yes_definitely.png";
+            image = "images/1.png";
             color = "text-success";
             break;
         case 1:
             answer = "Ask again later.";
-            image = "images/8ball_ask_again_later.png";
+            image = "images/2.png";
             color = "text-warning";
             break;
         case 2:
             answer = "Don't count on it.";
-            image = "images/8ball_dont_count_on_it.png";
+            image = "images/3.png";
             color = "text-danger";
             break;
         case 3:
             answer = "It is certain.";
-            image = "images/8ball_it_is_certain.png";
+            image = "images/4.png";
             color = "text-success";
             break;
         case 4:
             answer = "My sources say no.";
-            image = "images/8ball_my_sources_say_no.png";
+            image = "images/5.png";
             color = "text-danger";
             break;
         case 5:
             answer = "Outlook good.";
-            image = "images/8ball_outlook_good.png";
+            image = "images/6.png";
             color = "text-success";
             break;
         case 6:
             answer = "Reply hazy, try again.";
-            image = "images/8ball_reply_hazy_try_again.png";
+            image = "images/7.png";
             color = "text-warning";
             break;
         case 7:
             answer = "Very doubtful.";
-            image = "images/8ball_very_doubtful.png";
+            image = "images/8.png";
             color = "text-danger";
             break;
         case 8:
             answer = "Signs point to yes.";
-            image = "images/8ball_signs_point_to_yes.png";
+            image = "images/9.png";
             color = "text-success";
             break;
     }
