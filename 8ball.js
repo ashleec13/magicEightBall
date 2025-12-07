@@ -1,7 +1,43 @@
 
+// USED THE BUILT IN AI
 let lastNumber = null;
+let lastMouseX = 0;
+let lastMouseY = 0;
+let lastMouseTime = 0;
+let shakeThreshold = 9;
+let shakeTimeout;
+
+// Track mouse movement for shake detection
+document.addEventListener('mousemove', (e) => {
+    const currentTime = Date.now();
+    const deltaX = Math.abs(e.clientX - lastMouseX);
+    const deltaY = Math.abs(e.clientY - lastMouseY);
+    const deltaTime = currentTime - lastMouseTime;
+    
+    // Calculate velocity
+    if (deltaTime > 0) {
+        const velocity = (deltaX + deltaY) / deltaTime;
+        
+        // Detect shake: fast movement
+        if (velocity > shakeThreshold) {
+            // Clear previous shake timeout
+            clearTimeout(shakeTimeout);
+            
+            // Set a timeout to prevent multiple triggers in quick succession
+            shakeTimeout = setTimeout(() => {
+                shakeMagic8Ball();
+            }, 100);
+        }
+    }
+    
+    lastMouseX = e.clientX;
+    lastMouseY = e.clientY;
+    lastMouseTime = currentTime;
+});
+
+// USED THE BUILT IN AI
 function shakeMagic8Ball() {
-    const question = prompt("Ask a yes or no question:");
+    const question = prompt("Ask a yes or no question for the witch:");
 
     if (question === null) {
         document.getElementById('response-text').innerText = 'Please Ask A Question';
@@ -25,47 +61,47 @@ function shakeMagic8Ball() {
     switch (randomNumber) {
         case 0:
             answer = "Yes, definitely.";
-            image = "images/1.png";
+            image = "images/caldronResponse 2/caldronResponse-1.png";
             color = "text-success";
             break;
         case 1:
             answer = "Ask again later.";
-            image = "images/2.png";
+            image = "images/caldronResponse 2/caldronResponse-2.png";
             color = "text-warning";
             break;
         case 2:
             answer = "Don't count on it.";
-            image = "images/3.png";
+            image = "images/caldronResponse 2/caldronResponse-3.png";
             color = "text-danger";
             break;
         case 3:
             answer = "It is certain.";
-            image = "images/4.png";
+            image = "images/caldronResponse 2/caldronResponse-4.png";
             color = "text-success";
             break;
         case 4:
             answer = "My sources say no.";
-            image = "images/5.png";
+            image = "images/caldronResponse 2/caldronResponse-5.png";
             color = "text-danger";
             break;
         case 5:
             answer = "Outlook good.";
-            image = "images/6.png";
+            image = "images/caldronResponse 2/caldronResponse-6.png";
             color = "text-success";
             break;
         case 6:
             answer = "Reply hazy, try again.";
-            image = "images/7.png";
+            image = "images/caldronResponse 2/caldronResponse-7.png";
             color = "text-warning";
             break;
         case 7:
             answer = "Very doubtful.";
-            image = "images/8.png";
+            image = "images/caldronResponse 2/caldronResponse-8.png";
             color = "text-danger";
             break;
         case 8:
             answer = "Signs point to yes.";
-            image = "images/9.png";
+            image = "images/caldronResponse 2/caldronResponse-9.png";
             color = "text-success";
             break;
     }
